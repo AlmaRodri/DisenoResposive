@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Práctica Flexbox y Grid</title>
+
+  <link rel="icon" type="imagen/x-icon" href="tejer.png">
+  
+  <style>
+    /* Reseteo básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Flexbox en Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+    color: #FFD700; /* Efecto hover para los enlaces */
+    }
+
+    /* Grid en la Sección Principal */
+    main {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    /* Sidebar */
+    aside {
+      background-color: #f4f4f4;
+      padding: 15px;
+    }
+
+    /* Galería con Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%; 
+      aspect-ratio: 9/16; /* Mantiene una proporción de 9:16*/
+      object-fit: cover; /* Asegura que la imagen mantenga proporciones y llene el contenedor */
+      display: block;
+    }
+
+    /* Flexbox en Footer */
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+    }
+    footer a {
+    color: #fff; /* Blanco para los enlaces en el footer */
+    text-decoration: none;
+    transition: color 0.3s;
+    }
+    footer a:hover {
+    color: #FFD700;
+     }
+    .logo{
+      max-width: 75px; /* Ajusta el tamaño máximo del logo */
+      height: auto; 
+    }
+
+    /* Responsividad */
+    @media (max-width: 768px) {
+      /* Reorganizar Header en pantallas pequeñas */
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      /* Cambiar layout de la sección principal */
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      /* Cambiar la galería a 2 columnas */
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      /* Cambiar la galería a 1 columna */
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      /* Reorganizar Footer en pantallas pequeñas */
+      footer {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="logo.jpg" alt="logo" class = "logo">
+  <h1>Crochet </h1>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Sobre Nosotros</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h2>¿Qué es el Crochet?</h2>
+    <p>El crochet es una técnica de tejido que usa un gancho para entrelazar hilos o lanas, formando distintos tipos de tramas. Con aplicaciones desde prendas de vestir hasta decoraciones para el hogar, el crochet es un arte versátil y lleno de creatividad.</p>
+    <br>
+    <h2>Historia del Crochet</h2>
+    <p>El origen del crochet es incierto, pero se cree que técnicas similares se practicaban en culturas antiguas como las de China, Turquía y América del Sur. Fue en el siglo XIX cuando el crochet alcanzó gran popularidad en Europa, particularmente en Irlanda durante la hambruna. Desde entonces, se ha convertido en un símbolo de creatividad y tradición.</p>
+   <br>
+    <h2>Técnicas Básicas del Crochet</h2>
+    <p>Las técnicas más comunes incluyen el punto bajo, punto alto y el anillo mágico. También existen variaciones como el crochet tunecino y el filet crochet, que ofrecen distintos estilos y patrones únicos.</p>
+    <br>
+    <h2>Beneficios del Crochet</h2>
+    <p>El crochet no solo es una actividad creativa, sino que también tiene efectos relajantes. Muchas personas lo practican como una forma de meditación, ayudando a reducir el estrés y mejorar la concentración. Además, la comunidad alrededor del crochet permite conectar con otros apasionados por el tejido.</p> <br>
+    </section>
+  
+  <aside>
+    <h3>Tecnicas de calentamiento de manos</h3>
+    <p>Estas técnicas ayudan a evitar la fatiga muscular y mejorar la flexibilidad de los dedos, manos y muñecas, fundamentales para tejer de manera cómoda y sin tensiones.</p> <br>
+    <ol>
+        <li>
+            <h4>Rotación de Muñecas</h4>
+            <p>Extiende tus brazos hacia adelante y gira las muñecas en círculos, primero en una dirección y luego en la otra. Haz esto durante 30 segundos.</p>
+        </li>
+        <li>
+            <h4>Apertura y Cierre de Manos</h4>
+            <p>Abre y cierra las manos repetidamente durante un minuto. Esto ayuda a activar los músculos de las manos y los dedos.</p>
+        </li>
+        <li>
+            <h4>Masaje de Manos</h4>
+            <p>Usa la yema de los dedos para masajear la palma y los dedos. Esto mejora la circulación y relaja los músculos.</p>
+        </li>
+    </ol>
+  </aside>
+</main>
+
+<section class="gallery">
+  <img src="ramo.jpg" alt="Ramo">
+  <img src="posavasos.jpg" alt="Set posavasos">
+  <img src="chile.jpg" alt="Chile con sombrero">  
+</section>
+
+<main>
+  <h2>Sobre nosotros</h2> 
+  
+</main>
+
+<footer>
+  <div>© 2024 Crochet</div>
+  <div>
+    <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+  </div>
+</footer>
+
+</body>
+</html>
